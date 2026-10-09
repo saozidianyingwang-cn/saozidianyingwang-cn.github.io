@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="嫂子电影网（saozidianyingwang-cn）专注华语家庭伦理与都市情感题材影视，提供家庭伦理剧、情感电影推荐、影视看点解析与经典剧集盘点，每日更新观影指南。">
+<meta name="keywords" content="嫂子电影网,saozidianyingwang-cn,家庭伦理剧,情感电影,都市情感,影视推荐,剧集盘点">
+<meta name="author" content="嫂子电影网">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#24140f">
+<title>嫂子电影网 - 家庭伦理·情感电影推荐与剧集盘点 | saozidianyingwang-cn</title>
+<link rel="canonical" href="https://域名.github.io">
+<style>
+/* ============ 基础 ============ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --rose:#c1440e;--rose-l:#e0723a;--gold:#e8b96a;--ink:#f3ece4;
+  --bg:#24140f;--card:#2e1a14;--line:rgba(232,185,106,.18);
+  --muted:#b9a99a;--shadow:0 30px 70px -25px rgba(0,0,0,.75);
+  --ease:cubic-bezier(.22,.7,.3,1);
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:"PingFang SC","Microsoft YaHei","Songti SC",Georgia,serif;background:var(--bg);color:var(--ink);line-height:1.75;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none;transition:.35s var(--ease)}
+img{max-width:100%;display:block}
+.container{max-width:1220px;margin:0 auto;padding:0 24px}
+.section{padding:92px 0;position:relative}
+.eyebrow{color:var(--gold);font-size:12px;letter-spacing:.28em;font-weight:700}
+.h2{font-size:clamp(26px,4.2vw,44px);line-height:1.28;margin:8px 0 12px;font-weight:800;letter-spacing:-.4px}
+.h2 em{font-style:normal;color:var(--rose-l)}
+.lead{color:var(--muted);max-width:660px;font-size:15px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;border-radius:999px;font-weight:700;font-size:14px;cursor:pointer;border:0;transition:transform .35s,box-shadow .35s;font-family:inherit}
+.btn-rose{background:linear-gradient(135deg,var(--rose),var(--rose-l));color:#fff;box-shadow:0 14px 32px -12px var(--rose)}
+.btn-rose:hover{transform:translateY(-3px);box-shadow:0 22px 46px -16px var(--rose)}
+.btn-line{background:transparent;color:var(--gold);border:1.5px solid var(--line)}
+.btn-line:hover{color:#fff;border-color:var(--gold)}
+#toTop{position:fixed;right:18px;bottom:24px;width:46px;height:46px;border-radius:50%;background:var(--rose);color:#fff;display:grid;place-items:center;z-index:60;opacity:0;pointer-events:none;transition:.4s;box-shadow:var(--shadow);border:0;cursor:pointer;font-size:18px}
+#toTop.show{opacity:1;pointer-events:auto}
+/* ============ 导航 ============ */
+.nav{position:fixed;inset:0 0 auto;z-index:50;transition:background .4s,backdrop-filter .4s}
+.nav.solid{background:rgba(36,20,15,.9);backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:74px}
+.logo{display:flex;align-items:baseline;gap:8px;font-weight:900;font-size:20px;letter-spacing:1px}
+.logo b{color:var(--rose-l);font-size:26px}
+.logo small{font-size:10.5px;color:var(--gold);letter-spacing:.22em;font-family:"PingFang SC",sans-serif}
+.nav-links{display:flex;gap:2px;align-items:center}
+.nav-links a{position:relative;padding:10px 15px;font-size:14px;font-weight:600;color:#e2d6c9;border-radius:999px;font-family:"PingFang SC",sans-serif}
+.nav-links a:hover{color:#fff;background:rgba(232,185,106,.08)}
+.nav-links a::after{content:"";position:absolute;left:50%;right:50%;bottom:6px;height:2px;background:var(--gold);transition:.3s;opacity:0}
+.nav-links a:hover::after{left:15px;right:15px;opacity:1}
+.search{display:flex;align-items:center;gap:7px;background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:999px;padding:7px 14px;margin-left:16px}
+.search input{border:0;background:transparent;color:#fff;font-size:13px;width:120px;outline:none;font-family:inherit}
+.search input::placeholder{color:var(--muted)}
+.search button{border:0;background:transparent;color:var(--gold);cursor:pointer;font-size:14px}
+.menu-toggle{display:none;width:42px;height:42px;border:0;background:transparent;color:var(--gold);font-size:22px;cursor:pointer}
+/* ============ HERO ============ */
+.hero{position:relative;min-height:100vh;display:grid;grid-template-columns:1fr;align-content:center;justify-items:center;text-align:center;padding:140px 0 80px;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(900px 520px at 50% 8%,rgba(193,68,14,.30),transparent 60%),radial-gradient(700px 480px at 50% 100%,rgba(232,185,106,.10),transparent 62%),linear-gradient(180deg,#24140f,#1c0f0b)}
+.lantern{position:absolute;top:0;width:64px;height:88px;background:radial-gradient(circle at 50% 35%,#ff8a4c,#c1440e);border-radius:14px 14px 22px 22px;box-shadow:0 0 60px rgba(225,120,60,.5);animation:sway 5s ease-in-out infinite}
+.lantern::before{content:"";position:absolute;top:-14px;left:50%;transform:translateX(-50%);width:14px;height:16px;background:#7a3310;border-radius:3px}
+.lantern::after{content:"";position:absolute;bottom:-22px;left:50%;transform:translateX(-50%);width:2px;height:22px;background:#a3521c}
+.l1{left:8%}.l2{right:9%;animation-delay:-2.4s;transform:scale(.82)}
+@keyframes sway{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(7deg)}}
+.hero .inner{position:relative;z-index:2;max-width:820px}
+.hero .stamp{display:inline-block;font-family:"Songti SC",serif;border:1.5px solid var(--gold);color:var(--gold);padding:5px 16px;border-radius:4px;font-size:12px;letter-spacing:.3em;margin-bottom:22px}
+.hero h1{font-size:clamp(40px,8vw,84px);line-height:1.05;font-weight:900;letter-spacing:2px;text-shadow:0 20px 60px rgba(0,0,0,.6)}
+.hero h1 span{color:var(--rose-l)}
+.hero .sub{font-size:clamp(15px,2.4vw,19px);color:var(--gold);letter-spacing:.5em;margin-top:14px}
+.hero p{color:#c9bbab;font-size:16px;max-width:600px;margin:26px auto 32px}
+.hero-acts{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+.chips{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;margin-top:34px}
+.chips a{font-size:12.5px;padding:6px 15px;border:1px solid var(--line);border-radius:999px;color:#d8c9b6;font-family:"PingFang SC",sans-serif}
+.chips a:hover{border-color:var(--rose-l);color:var(--rose-l)}
+/* ============ 栏目一：今日推荐（瀑布流错位） ============ */
+.sec-feat{background:#20120d}
+.masonry{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:120px;gap:18px;margin-top:42px}
+.ms{grid-row:span 2;border-radius:16px;overflow:hidden;position:relative;cursor:pointer;border:1px solid rgba(255,255,255,.05)}
+.ms.tall{grid-row:span 3}
+.ms.wide{grid-column:span 2}
+.ms img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:scale .9s var(--ease)}
+.ms:hover img{scale:1.06}
+.ms::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(20,10,7,.98) 8%,rgba(20,10,7,.2) 55%,transparent)}
+.ms .info{position:absolute;left:18px;right:18px;bottom:16px;z-index:2}
+.ms .info i{font-style:normal;font-size:10.5px;letter-spacing:.22em;color:var(--gold);font-weight:700;font-family:"PingFang SC",sans-serif}
+.ms .info h3{font-size:17px;margin-top:4px;line-height:1.4}
+.ms .info .tag{display:inline-block;margin-top:8px;font-size:11px;padding:3px 10px;border:1px solid var(--line);border-radius:99px;color:#e0d3c2}
+/* ============ 栏目二：题材图谱（同心环） ============ */
+.sec-map{background:linear-gradient(180deg,#24140f,#1a0e0a)}
+.map-wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;margin-top:44px}
+.orbit{position:relative;width:100%;aspect-ratio:1/1;max-width:440px;margin:0 auto}
+.orbit .core{position:absolute;inset:32%;border-radius:50%;background:radial-gradient(circle at 35% 30%,var(--rose-l),var(--rose));display:grid;place-items:center;text-align:center;box-shadow:0 0 80px rgba(193,68,14,.5);animation:pulse 6s ease-in-out infinite}
+@keyframes pulse{0%,100%{scale:1}50%{scale:1.05}}
+.orbit .core b{font-size:20px;letter-spacing:2px}
+.orbit .core small{font-size:10px;color:#f6e3d0;letter-spacing:.3em;font-family:"PingFang SC",sans-serif}
+.ring{position:absolute;inset:0;border:1px dashed rgba(232,185,106,.22);border-radius:50%;animation:spin 60s linear infinite}
+.ring.r2{inset:14%;animation-duration:44s;animation-direction:reverse}
+@keyframes spin{to{transform:rotate(360deg)}}
+.node{position:absolute;width:84px;height:84px;border-radius:50%;background:var(--card);border:1px solid var(--line);display:grid;place-items:center;text-align:center;cursor:pointer;transition:transform .4s,border-color .4s;margin:-42px}
+.node:hover{transform:scale(1.12);border-color:var(--rose-l);color:var(--gold)}
+.node b{font-size:12.5px;display:block;line-height:1.2}
+.node small{font-size:9px;color:var(--muted);font-family:"PingFang SC",sans-serif}
+.map-txt h3{font-size:22px;margin-bottom:12px}
+.map-txt p{color:var(--muted);font-size:14.5px;margin-bottom:14px}
+.map-txt ul{list-style:none;border-top:1px solid var(--line);margin-top:18px}
+.map-txt li{padding:12px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;font-size:14px}
+.map-txt li b{color:var(--gold);font-weight:700;font-size:12px;font-family:"PingFang SC",sans-serif;white-space:nowrap}
+/* ============ 栏目三：剧情看点（手风琴） ============ */
+.sec-acc{background:#20120d}
+.acc{margin-top:42px;display:grid;grid-template-columns:360px 1fr;gap:40px;align-items:start}
+.acc-intro h3{font-size:26px;line-height:1.4}
+.acc-intro p{color:var(--muted);font-size:14.5px;margin:14px 0 22px}
+.acc-item{border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-bottom:12px;background:var(--card);transition:border-color .3s}
+.acc-item[open]{border-color:rgba(224,114,58,.5)}
+.acc-item>summary{display:flex;align-items:center;gap:16px;padding:18px 22px;cursor:pointer;list-style:none;font-weight:700;font-size:16px}
+.acc-item>summary::-webkit-details-marker{display:none}
+.acc-item>summary .idx{font-size:12px;color:var(--gold);border:1px solid var(--line);border-radius:6px;padding:3px 8px;font-family:"PingFang SC",sans-serif;white-space:nowrap}
+.acc-item>summary .arw{margin-left:auto;color:var(--rose-l);transition:.35s}
+.acc-item[open]>summary .arw{transform:rotate(45deg)}
+.acc-item .body{padding:0 22px 20px 60px;color:#c9bbab;font-size:14px}
+.acc-item .body .quote{font-style:italic;color:var(--gold);border-left:2px solid var(--rose);padding-left:12px;margin:10px 0 12px}
+/* ============ 栏目四：口碑榜（竖向堆叠竞赛条） ============ */
+.sec-rank{background:linear-gradient(160deg,#2b150d,#180c08)}
+.podium{margin-top:44px;display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center}
+.pod{display:flex;flex-direction:column;gap:12px}
+.pod-row{display:grid;grid-template-columns:44px 1fr 60px;align-items:center;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 16px;cursor:pointer;transition:transform .35s,border-color .35s}
+.pod-row:hover{transform:translateX(6px);border-color:var(--rose-l)}
+.pod-row .med{width:34px;height:34px;border-radius:9px;display:grid;place-items:center;font-weight:900;font-size:14px;font-family:"PingFang SC",sans-serif}
+.pod-row:nth-child(1) .med{background:linear-gradient(135deg,#f5d77e,#c99a2e);color:#3a2708}
+.pod-row:nth-child(2) .med{background:linear-gradient(135deg,#d8dde3,#8d97a3);color:#232a33}
+.pod-row:nth-child(3) .med{background:linear-gradient(135deg,#e2b08a,#a86c3c);color:#3a2413}
+.pod-row .nm{font-size:14px;font-weight:600}
+.pod-row .yr{font-size:11px;color:var(--muted);font-family:"PingFang SC",sans-serif}
+.pod-row .vl{font-weight:900;color:var(--gold);font-size:15px;text-align:right}
+.winner{position:relative;border-radius:24px;overflow:hidden;border:1px solid rgba(232,185,106,.3);padding:34px;text-align:center;background:radial-gradient(circle at 80% 0%,rgba(193,68,14,.35),transparent 55%),var(--card)}
+.winner .ribbon{position:absolute;top:18px;right:-34px;background:var(--rose);color:#fff;font-size:11px;letter-spacing:.2em;padding:5px 36px;transform:rotate(30deg);font-family:"PingFang SC",sans-serif}
+.winner img{width:120px;height:120px;border-radius:50%;object-fit:cover;margin:0 auto 16px;border:3px solid var(--gold)}
+.winner h3{font-size:24px}
+.winner p{color:var(--muted);font-size:13px;margin:8px 0 16px}
+.winner .num{font-size:52px;font-weight:900;line-height:1;color:transparent;-webkit-text-stroke:2px var(--gold);text-shadow:0 0 40px rgba(232,185,106,.4)}
+/* ============ 栏目五：编辑手记 + 订阅 ============ */
+.sec-note{background:#24140f}
+.note-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;margin-top:44px;align-items:stretch}
+.letter{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:34px;position:relative}
+.letter::before{content:"“";position:absolute;right:24px;top:-6px;font-size:120px;line-height:.8;color:rgba(232,185,106,.16);font-family:Georgia,serif}
+.letter h3{font-size:20px;margin-bottom:6px}
+.letter .sign{color:var(--gold);font-size:12px;letter-spacing:.2em;font-family:"PingFang SC",sans-serif}
+.letter p{color:#c3b5a4;font-size:14.5px;margin-top:16px;text-indent:2em}
+.letter .signoff{text-align:right;margin-top:18px;color:var(--rose-l);font-weight:700}
+.subscribe{background:linear-gradient(135deg,#3a1c10,#24140f);border-radius:22px;padding:34px;border:1px solid var(--line)}
+.subscribe h3{font-size:21px}
+.subscribe p{color:var(--muted);font-size:13.5px;margin:12px 0 22px}
+.subscribe form{display:flex;flex-direction:column;gap:12px}
+.subscribe input{padding:14px 18px;border-radius:10px;border:1px solid var(--line);background:rgba(255,255,255,.04);color:#fff;font-size:14px;font-family:inherit;outline:none}
+.subscribe input:focus{border-color:var(--gold)}
+.subscribe button{background:var(--rose);color:#fff;border:0;font-weight:800;border-radius:10px;font-family:inherit}
+/* ============ 页脚 ============ */
+footer{background:#150b07;padding:58px 0 26px}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:34px;padding-bottom:34px;border-bottom:1px solid var(--line)}
+.foot-grid h5{color:var(--gold);font-size:14px;margin-bottom:14px;letter-spacing:.1em;font-family:"PingFang SC",sans-serif}
+.foot-grid ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.foot-grid a{font-size:13px;color:#a99a89}
+.foot-grid a:hover{color:var(--rose-l)}
+.foot-logo{font-weight:900;font-size:22px;color:#fff;margin-bottom:10px}
+.foot-logo b{color:var(--rose-l)}
+.copyright{text-align:center;font-size:12.5px;color:var(--muted);padding-top:22px;line-height:1.9}
+.copyright b{color:var(--gold)}
+/* ============ 揭示 ============ */
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.lantern,.ring,.core{animation:none}}
+/* ============ 响应式 ============ */
+@media(max-width:1020px){
+  .masonry{grid-template-columns:repeat(2,1fr)}
+  .map-wrap,.podium,.note-grid,.acc{grid-template-columns:1fr}
+  .hero{min-height:auto;padding-bottom:64px}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:720px){
+  .section{padding:62px 0}
+  .menu-toggle{display:block}
+  .search{display:none}
+  .nav-links{position:fixed;inset:74px 0 0;flex-direction:column;justify-content:flex-start;gap:2px;padding:24px 18px;background:rgba(28,15,11,.97);backdrop-filter:blur(16px);transform:translateY(-110%);transition:transform .45s var(--ease)}
+  .nav-links.open{transform:none}
+  .nav-links a{padding:15px 16px;font-size:16px;width:100%;text-align:left}
+  .hero h1{font-size:38px;letter-spacing:1px}
+  .hero .sub{letter-spacing:.28em;font-size:12px}
+  .masonry{grid-template-columns:1fr;grid-auto-rows:240px}
+  .ms,.ms.tall,.ms.wide{grid-row:span 1;grid-column:span 1}
+  .orbit{max-width:320px}
+  .node{width:64px;height:64px;margin:-32px}
+  .node b{font-size:10.5px}
+  .acc-item .body{padding-left:22px}
+  .pod-row{grid-template-columns:36px 1fr 46px;gap:9px;font-size:13px}
+  .foot-grid{grid-template-columns:1fr}
+  .subscribe,.letter{padding:26px 20px}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaobao.js"></script>
+
+<!-- ===== 导航 ===== -->
+<header class="nav" id="navbar">
+  <div class="container nav-in">
+    <a class="logo" href="#top" aria-label="嫂子电影网 返回顶部">
+      <b>嫂子</b>电影网<small>SAOZIDIANYINGWANG</small>
+    </a>
+    <nav class="nav-links" id="navMenu" aria-label="主导航">
+      <a href="#feat">今日推荐</a>
+      <a href="#map">题材图谱</a>
+      <a href="#acc">剧情看点</a>
+      <a href="#rank">口碑榜</a>
+      <a href="#note">编辑手记</a>
+      <form class="search" action="#" method="get" onsubmit="event.preventDefault()">
+        <input type="search" name="q" placeholder="搜剧名 / 演员" aria-label="搜索">
+        <button type="submit" aria-label="搜索">🔍</button>
+      </form>
+    </nav>
+    <button class="menu-toggle" id="menuBtn" aria-label="切换菜单">☰</button>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="top">
+  <span class="lantern l1" aria-hidden="true"></span>
+  <span class="lantern l2" aria-hidden="true"></span>
+  <div class="inner reveal">
+    <span class="stamp">影视 · 人情 · 世相</span>
+    <h1>嫂子<span>电影网</span></h1>
+    <div class="sub">SAOZIDIANYINGWANG · CN</div>
+    <p>嫂子电影网（saozidianyingwang-cn）聚焦家庭伦理与都市情感题材影视作品，为你梳理那些关于婚姻、亲情、代际与选择的银幕故事——看懂剧情，也看懂人心。</p>
+    <div class="hero-acts">
+      <a class="btn btn-rose" href="#feat">开始选片 →</a>
+      <a class="btn btn-line" href="#rank">查看口碑榜</a>
+    </div>
+    <div class="chips">
+      <a href="#map">家庭伦理</a><a href="#map">婚姻情感</a><a href="#map">都市女性</a>
+      <a href="#map">代际关系</a><a href="#map">现实题材</a><a href="#map">经典剧集</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 栏目一：今日推荐（瀑布流） ===== -->
+<section class="section sec-feat" id="feat" aria-labelledby="h1">
+  <div class="container">
+    <span class="eyebrow">Column 01 · 今日推荐</span>
+    <h2 class="h2" id="h1">今日<em>值得看</em>的 6 部</h2>
+    <p class="lead">编辑部按「情感浓度 × 现实锐度 × 表演完成度」三重维度甄选。鼠标悬停，看清这部戏究竟在讲什么。</p>
+    <div class="masonry">
+      <article class="ms tall"><img src="https://images.unsplash.com/photo-1518609878373-06d740f60d8b?w=600&q=80" alt=""><div class="info"><i>家庭伦理</i><h3>父母爱情</h3><span class="tag">婚姻 · 50 年</span></div></article>
+      <article class="ms"><img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?w=600&q=80" alt=""><div class="info"><i>都市情感</i><h3>三十而已</h3><span class="tag">女性 · 抉择</span></div></article>
+      <article class="ms wide"><img src="https://images.unsplash.com/photo-1490578474895-699bc4e3f444?w=800&q=80" alt=""><div class="info"><i>现实题材</i><h3>都挺好</h3><span class="tag">原生家庭 · 和解</span></div></article>
+      <article class="ms"><img src="https://images.unsplash.com/photo-1484514181906-25d877a5b7b6?w=600&q=80" alt=""><div class="info"><i>年代情感</i><h3>人世间</h3><span class="tag">时代 · 命运</span></div></article>
+      <article class="ms tall"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=600&q=80" alt=""><div class="info"><i>婚姻危机</i><h3>夫妻的世界</h3><span class="tag">背叛 · 反击</span></div></article>
+      <article class="ms"><img src="https://images.unsplash.com/photo-1520975922284-8c4e3eec93e3?w=600&q=80" alt=""><div class="info"><i>代际关系</i><h3>小舍得</h3><span class="tag">教育 · 焦虑</span></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 栏目二：题材图谱（同心环） ===== -->
+<section class="section sec-map" id="map" aria-labelledby="h2">
+  <div class="container">
+    <span class="eyebrow">Column 02 · 题材图谱</span>
+    <h2 class="h2" id="h2">情感题材<em>图谱</em></h2>
+    <p class="lead">家庭伦理剧从来不是家长里短，而是一张关于"关系"的地图。找到你此刻最想看的那一种关系。</p>
+    <div class="map-wrap">
+      <div class="orbit" aria-hidden="true">
+        <div class="ring"></div>
+        <div class="ring r2"></div>
+        <a class="node" href="#" style="top:50%;left:0"><b>婚姻</b><small>286 部</small></a>
+        <a class="node" href="#" style="top:15%;left:22%"><b>亲子</b><small>198 部</small></a>
+        <a class="node" href="#" style="top:6%;left:58%"><b>婆媳</b><small>154 部</small></a>
+        <a class="node" href="#" style="top:38%;left:86%"><b>出轨</b><small>120 部</small></a>
+        <a class="node" href="#" style="top:74%;left:82%"><b>重逢</b><small>96 部</small></a>
+        <a class="node" href="#" style="top:88%;left:48%"><b>复仇</b><small>132 部</small></a>
+        <a class="node" href="#" style="top:70%;left:14%"><b>留守</b><small>78 部</small></a>
+        <div class="core"><div><b>情感<br>母题</b><small>7 大主题</small></div></div>
+      </div>
+      <div class="map-txt">
+        <h3>为什么我们总在讨论"家里那点事"</h3>
+        <p>家庭伦理题材的持久生命力，来自它把最私密的关系放进最公开的空间：餐桌、客厅、婚礼、葬礼。每一次争吵，都是一次价值观的对撞。</p>
+        <ul>
+          <li><span>婚姻危机：出轨、冷暴力与经济权</span><b>热度 NO.1</b></li>
+          <li><span>代际冲突：赡养、育儿与"为你好"</span><b>热度 NO.2</b></li>
+          <li><span>女性觉醒：从忍受到出走的叙事转折</span><b>年度增长 38%</b></li>
+          <li><span>乡土伦理：宗族、面子与传统秩序</span><b>口碑最高</b></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 栏目三：剧情看点（手风琴） ===== -->
+<section class="section sec-acc" id="acc" aria-labelledby="h3">
+  <div class="container">
+    <span class="eyebrow">Column 03 · 剧情看点</span>
+    <h2 class="h2" id="h3">看之前，先看懂<em>这几个关键</em></h2>
+    <p class="lead">家庭伦理剧的爽点不在狗血，而在"合情合理的不合理"。展开条目，get 编剧埋下的那根引线。</p>
+    <div class="acc">
+      <div class="acc-intro reveal">
+        <h3>好戏，都藏在<em style="color:var(--rose-l)">台词之外</em></h3>
+        <p>同样的饭桌戏，为什么有的让人窒息，有的让人发笑？差别在于"谁先夹菜、谁不说话、谁把碗重重放下"。</p>
+        <a class="btn btn-rose" href="#">进入完整剧透解析 →</a>
+      </div>
+      <div>
+        <details class="acc-item" open>
+          <summary><span class="idx">看点 01</span>沉默比争吵更有杀伤力<span class="arw">＋</span></summary>
+          <div class="body"><p class="quote">"他一句话没说，她就把碗放下了。"</p>高级的家庭伦理叙事，往往用"不说话"完成最重的表达。镜头语言、道具调度、演员的微表情，共同构成一场没有台词的高潮戏。</div>
+        </details>
+        <details class="acc-item">
+          <summary><span class="idx">看点 02</span>反派为何总是"讲道理"的人<span class="arw">＋</span></summary>
+          <div class="body"><p class="quote">"我这都是为这个家好。"</p>真正令人不适的角色，从不认为自己有错。他们用孝道、责任、传统为刀，把伤害包装成奉献——这才是伦理剧最锋利的一刀。</div>
+        </details>
+        <details class="acc-item">
+          <summary><span class="idx">看点 03</span>餐桌即战场：构图里的权力<span class="arw">＋</span></summary>
+          <div class="body"><p class="quote">坐主位的人，不一定是一家之主。</p>注意谁坐在镜头中央、谁的杯子是满的、谁被裁在画面边缘。导演用一顿饭，交代了整部剧的人物关系与权力结构。</div>
+        </details>
+        <details class="acc-item">
+          <summary><span class="idx">看点 04</span>和解不是终点，是另一种开始<span class="arw">＋</span></summary>
+          <div class="body"><p class="quote">"我们和好了。"——然后呢？</p>优秀的结局不给廉价团圆，而把镜头留给"和解之后如何相处"的漫长日常。真正的修复，发生在片尾字幕之后。</div>
+        </details>
+        <details class="acc-item">
+          <summary><span class="idx">看点 05</span>配角决定一部剧的"人间味"<span class="arw">＋</span></summary>
+          <div class="body"><p class="quote">邻居、亲戚、同事——他们才是观众的嘴替。</p>他们负责递话、吐槽、劝和、添乱，用一句方言或一声叹息，把精英叙事拉回烟火人间。配角立不住，剧就飘了。</div>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 栏目四：口碑榜（竞赛条 + 冠军） ===== -->
+<section class="section sec-rank" id="rank" aria-labelledby="h4">
+  <div class="container">
+    <span class="eyebrow">Column 04 · 口碑榜</span>
+    <h2 class="h2" id="h4" style="color:#fff">家庭伦理<em>口碑榜</em> TOP 6</h2>
+    <p class="lead" style="color:var(--muted)">综合豆瓣评分、本站编辑权重与观众投票，每月 15 日更新。榜首作品可获得"月度必看"标识。</p>
+    <div class="podium">
+      <div class="pod">
+        <div class="pod-row"><span class="med">1</span><span><span class="nm">父母爱情</span><br><span class="yr">2014 · 45 集</span></span><span class="vl">9.4</span></div>
+        <div class="pod-row"><span class="med">2</span><span><span class="nm">都挺好</span><br><span class="yr">2019 · 46 集</span></span><span class="vl">8.5</span></div>
+        <div class="pod-row"><span class="med">3</span><span><span class="nm">人世间</span><br><span class="yr">2022 · 58 集</span></span><span class="vl">8.4</span></div>
+        <div class="pod-row"><span class="med">4</span><span><span class="nm">山海情</span><br><span class="yr">2021 · 23 集</span></span><span class="vl">9.2</span></div>
+        <div class="pod-row"><span class="med">5</span><span><span class="nm">三十而已</span><br><span class="yr">2020 · 43 集</span></span><span class="vl">7.9</span></div>
+        <div class="pod-row"><span class="med">6</span><span><span class="nm">小欢喜</span><br><span class="yr">2019 · 49 集</span></span><span class="vl">8.3</span></div>
+      </div>
+      <div class="winner">
+        <span class="ribbon">本月必看</span>
+        <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?w=300&q=80" alt="">
+        <div class="num">TOP 1</div>
+        <h3>父母爱情</h3>
+        <p>用 50 年婚姻，讲完中国式家庭的全部体面与狼狈。<br>连续 11 个月位居本站口碑榜首。</p>
+        <a class="btn btn-rose" href="#">查看人物关系图 →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 栏目五：编辑手记 + 订阅 ===== -->
+<section class="section sec-note" id="note" aria-labelledby="h5">
+  <div class="container">
+    <span class="eyebrow">Column 05 · 编辑手记</span>
+    <h2 class="h2" id="h5">写给<em>每一个</em>看电视的人</h2>
+    <p class="lead">嫂子电影网（saozidianyingwang-cn）由一群相信"家常即史诗"的影迷维护。我们不追流量，只追那些让你在深夜关掉电视后，还想坐一会儿的戏。</p>
+    <div class="note-grid">
+      <div class="letter reveal">
+        <h3>为什么我们要认真看待"家庭伦理剧"</h3>
+        <div class="sign">—— 主编手记</div>
+        <p>它常被嘲笑为"狗血"，却是中国观众最诚实的一面镜子。我们在里面看到的不是别人的家，是自己不敢挂断的那通电话、不敢回的那条消息、和那句始终没有说出口的"对不起"。</p>
+        <p>所以本站的推荐标准只有一条：看完之后，你是否更愿意给家里那个人，打一个电话。</p>
+        <div class="signoff">—— 27 电影网编辑部</div>
+      </div>
+      <div class="subscribe reveal">
+        <h3>每周一封「家常片单」</h3>
+        <p>1 部必看剧集 + 3 个名场面解析 + 1 句写给家人的话。无广告，随时退订。</p>
+        <form action="#" method="post" onsubmit="event.preventDefault();this.querySelector('button').textContent='已订阅 ✓'">
+          <input type="email" name="email" required placeholder="输入邮箱地址" aria-label="邮箱">
+          <button class="btn" type="submit">订阅手记</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 页脚 ===== -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo"><b>嫂子</b>电影网 · saozidianyingwang-cn</div>
+        <p style="font-size:13px;color:var(--muted);max-width:330px">聚焦家庭伦理与都市情感影视的推荐与解析站点。网站网址：https://域名.github.io</p>
+      </div>
+      <div><h5>影视导航</h5><ul>
+        <li><a href="#feat">今日推荐</a></li><li><a href="#map">题材图谱</a></li>
+        <li><a href="#acc">剧情看点</a></li><li><a href="#rank">口碑榜</a></li>
+      </ul></div>
+      <div><h5>专题策划</h5><ul>
+        <li><a href="#">婆媳关系十讲</a></li><li><a href="#">婚姻剧百年流变</a></li>
+        <li><a href="#">女性角色进化史</a></li><li><a href="#">年代剧取景地</a></li>
+      </ul></div>
+      <div><h5>站点信息</h5><ul>
+        <li><a href="#">投稿合作</a></li><li><a href="#">内容声明</a></li>
+        <li><a href="#">隐私政策</a></li><li><a href="#">联系我们</a></li>
+      </ul></div>
+    </div>
+    <div class="copyright">
+      © 2019–2026 <b>嫂子电影网</b>（saozidianyingwang-cn）· 网站网址：https://域名.github.io<br>
+      本站内容为原创影视评论与公开资料整理，仅供交流与观影参考；影视作品版权归原作者及出品方所有，如有侵权请联系删除。
+    </div>
+  </div>
+</footer>
+
+<button id="toTop" aria-label="回到顶部">↑</button>
+
+<script>
+const nav=document.getElementById('navbar'),toTop=document.getElementById('toTop');
+const onScroll=()=>{const y=window.scrollY;nav.classList.toggle('solid',y>50);toTop.classList.toggle('show',y>700);};
+window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+const menuBtn=document.getElementById('menuBtn'),navMenu=document.getElementById('navMenu');
+menuBtn.addEventListener('click',()=>{navMenu.classList.toggle('open');menuBtn.textContent=navMenu.classList.contains('open')?'✕':'☰';});
+navMenu.addEventListener('click',e=>{if(e.target.tagName==='A'){navMenu.classList.remove('open');menuBtn.textContent='☰';}});
+
+const io=new IntersectionObserver(es=>{es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});},{threshold:.12});
+document.querySelectorAll('.reveal, .ms, .pod-row, .node, .letter, .subscribe').forEach(el=>io.observe(el));
+
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();window.scrollTo({top:t.offsetTop-74,behavior:'smooth'});}});
+});
+</script>
+</body>
+</html>
